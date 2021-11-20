@@ -3,3 +3,4 @@
  */
 
 export * from './lib/ng-bootstrap-ext.module';
+export * from './lib/toast';
