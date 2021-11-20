@@ -11,6 +11,12 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "paths": {
+      "ng-bootstrap-ext": [
+        "dist/ng-bootstrap-ext/ng-bootstrap-ext",
+        "dist/ng-bootstrap-ext"
+      ]
+    },
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
