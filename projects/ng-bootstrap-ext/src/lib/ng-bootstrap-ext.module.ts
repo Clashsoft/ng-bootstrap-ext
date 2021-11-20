@@ -1,16 +1,10 @@
-import { NgModule } from '@angular/core';
-import { NgBootstrapExtComponent } from './ng-bootstrap-ext.component';
-
+import {NgModule} from '@angular/core';
 
 
 @NgModule({
-  declarations: [
-    NgBootstrapExtComponent
-  ],
-  imports: [
-  ],
-  exports: [
-    NgBootstrapExtComponent
-  ]
+  declarations: [],
+  imports: [],
+  exports: [],
 })
-export class NgBootstrapExtModule { }
+export class NgBootstrapExtModule {
+}
