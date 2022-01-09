@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ToastService} from '../toast.service';
 
 @Component({
@@ -7,6 +7,7 @@ import {ToastService} from '../toast.service';
   styleUrls: ['./toast-list.component.scss'],
 })
 export class ToastListComponent implements OnInit {
+  @Input() top: string | number = 0;
 
   constructor(
     public toastService: ToastService,
