@@ -13,7 +13,7 @@ specifiers:
   '@angular/platform-browser': ~13.1.1
   '@angular/platform-browser-dynamic': ~13.1.1
   '@angular/router': ~13.1.1
-  '@ng-bootstrap/ng-bootstrap': 10.0.0
+  '@ng-bootstrap/ng-bootstrap': ^11.0.0
   '@types/jasmine': ~3.8.0
   '@types/node': ^12.11.1
   bootstrap: ^4.5.0
@@ -39,7 +39,7 @@ dependencies:
   '@angular/platform-browser': 13.1.1_ba78c0245ba37c1eb9e40fba17f0c0db
   '@angular/platform-browser-dynamic': 13.1.1_53ae741ee19166964f64e7b56404e938
   '@angular/router': 13.1.1_08b80eec157f3b321ee2225dd1a68122
-  '@ng-bootstrap/ng-bootstrap': 10.0.0_b573d6817ea37f219a6ad3cbdf3db8ae
+  '@ng-bootstrap/ng-bootstrap': 11.0.0_b573d6817ea37f219a6ad3cbdf3db8ae
   bootstrap: 4.6.1
   rxjs: 7.5.1
   tslib: 2.3.1
@@ -1599,14 +1599,14 @@ packages:
     engines: {node: '>=6.0.0'}
     dev: true
 
-  /@ng-bootstrap/ng-bootstrap/10.0.0_b573d6817ea37f219a6ad3cbdf3db8ae:
-    resolution: {integrity: sha512-Sz+QaxjuyJYJ+zyUbf0TevgcgVesCPQiiFiggEzxKjzY5R+Hvq3YgryLdXf2r/ryePL+C3FXCcmmKpTM5bfczQ==}
+  /@ng-bootstrap/ng-bootstrap/11.0.0_b573d6817ea37f219a6ad3cbdf3db8ae:
+    resolution: {integrity: sha512-qDnB0+jbpQ4wjXpM4NPRAtwmgTDUCjGavoeRDZHOvFfYvx/MBf1RTjZEqTJ1Yqq1pKP4BWpzxCgVTunfnpmsjA==}
     peerDependencies:
-      '@angular/common': ^12.0.0
-      '@angular/core': ^12.0.0
-      '@angular/forms': ^12.0.0
-      '@angular/localize': ^12.0.0
-      rxjs: ^6.5.5
+      '@angular/common': ^13.0.0
+      '@angular/core': ^13.0.0
+      '@angular/forms': ^13.0.0
+      '@angular/localize': ^13.0.0
+      rxjs: ^6.5.3 || ^7.4.0
     dependencies:
       '@angular/common': 13.1.1_@angular+core@13.1.1+rxjs@7.5.1
       '@angular/core': 13.1.1_rxjs@7.5.1+zone.js@0.11.4
