@@ -13,10 +13,10 @@ specifiers:
   '@angular/platform-browser': ~13.1.1
   '@angular/platform-browser-dynamic': ~13.1.1
   '@angular/router': ~13.1.1
-  '@ng-bootstrap/ng-bootstrap': ^11.0.0
+  '@ng-bootstrap/ng-bootstrap': ^12.0.0-beta.4
   '@types/jasmine': ~3.8.0
   '@types/node': ^12.11.1
-  bootstrap: ^4.5.0
+  bootstrap: ^5.1.3
   jasmine-core: ~3.8.0
   karma: ~6.3.0
   karma-chrome-launcher: ~3.1.0
@@ -39,8 +39,8 @@ dependencies:
   '@angular/platform-browser': 13.1.1_ba78c0245ba37c1eb9e40fba17f0c0db
   '@angular/platform-browser-dynamic': 13.1.1_53ae741ee19166964f64e7b56404e938
   '@angular/router': 13.1.1_08b80eec157f3b321ee2225dd1a68122
-  '@ng-bootstrap/ng-bootstrap': 11.0.0_b573d6817ea37f219a6ad3cbdf3db8ae
-  bootstrap: 4.6.1
+  '@ng-bootstrap/ng-bootstrap': 12.0.0-beta.4_b573d6817ea37f219a6ad3cbdf3db8ae
+  bootstrap: 5.1.3
   rxjs: 7.5.1
   tslib: 2.3.1
   zone.js: 0.11.4
@@ -1599,13 +1599,14 @@ packages:
     engines: {node: '>=6.0.0'}
     dev: true
 
-  /@ng-bootstrap/ng-bootstrap/11.0.0_b573d6817ea37f219a6ad3cbdf3db8ae:
-    resolution: {integrity: sha512-qDnB0+jbpQ4wjXpM4NPRAtwmgTDUCjGavoeRDZHOvFfYvx/MBf1RTjZEqTJ1Yqq1pKP4BWpzxCgVTunfnpmsjA==}
+  /@ng-bootstrap/ng-bootstrap/12.0.0-beta.4_b573d6817ea37f219a6ad3cbdf3db8ae:
+    resolution: {integrity: sha512-iOXZT4FLouAGJDRw4ruogyR+lg648nywNWKUxW7l+mtMC9i4kdpfo4beQ/nqb4Uq2zMDs9zj4MbKVI391+kMnA==}
     peerDependencies:
       '@angular/common': ^13.0.0
       '@angular/core': ^13.0.0
       '@angular/forms': ^13.0.0
       '@angular/localize': ^13.0.0
+      '@popperjs/core': ^2.10.2
       rxjs: ^6.5.3 || ^7.4.0
     dependencies:
       '@angular/common': 13.1.1_@angular+core@13.1.1+rxjs@7.5.1
@@ -2310,11 +2311,10 @@ packages:
     resolution: {integrity: sha1-aN/1++YMUes3cl6p4+0xDcwed24=}
     dev: true
 
-  /bootstrap/4.6.1:
-    resolution: {integrity: sha512-0dj+VgI9Ecom+rvvpNZ4MUZJz8dcX7WCX+eTID9+/8HgOkv3dsRzi8BGeZJCQU6flWQVYxwTQnEZFrmJSEO7og==}
+  /bootstrap/5.1.3:
+    resolution: {integrity: sha512-fcQztozJ8jToQWXxVuEyXWW+dSo8AiXWKwiSSrKWsRB/Qt+Ewwza+JWoLKiTuQLaEPhdNAJ7+Dosc9DOIqNy7Q==}
     peerDependencies:
-      jquery: 1.9.1 - 3
-      popper.js: ^1.16.1
+      '@popperjs/core': ^2.10.2
     dev: false
 
   /brace-expansion/1.1.11:
