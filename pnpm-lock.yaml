@@ -14,6 +14,7 @@ specifiers:
   '@angular/platform-browser-dynamic': ~13.1.1
   '@angular/router': ~13.1.1
   '@ng-bootstrap/ng-bootstrap': ^12.0.0-beta.4
+  '@popperjs/core': ^2.11.2
   '@types/jasmine': ~3.8.0
   '@types/node': ^12.11.1
   bootstrap: ^5.1.3
@@ -39,8 +40,9 @@ dependencies:
   '@angular/platform-browser': 13.1.1_ba78c0245ba37c1eb9e40fba17f0c0db
   '@angular/platform-browser-dynamic': 13.1.1_53ae741ee19166964f64e7b56404e938
   '@angular/router': 13.1.1_08b80eec157f3b321ee2225dd1a68122
-  '@ng-bootstrap/ng-bootstrap': 12.0.0-beta.4_b573d6817ea37f219a6ad3cbdf3db8ae
-  bootstrap: 5.1.3
+  '@ng-bootstrap/ng-bootstrap': 12.0.0-beta.4_1095a8ec7c9016229fa44c7704de9018
+  '@popperjs/core': 2.11.2
+  bootstrap: 5.1.3_@popperjs+core@2.11.2
   rxjs: 7.5.1
   tslib: 2.3.1
   zone.js: 0.11.4
@@ -1599,7 +1601,7 @@ packages:
     engines: {node: '>=6.0.0'}
     dev: true
 
-  /@ng-bootstrap/ng-bootstrap/12.0.0-beta.4_b573d6817ea37f219a6ad3cbdf3db8ae:
+  /@ng-bootstrap/ng-bootstrap/12.0.0-beta.4_1095a8ec7c9016229fa44c7704de9018:
     resolution: {integrity: sha512-iOXZT4FLouAGJDRw4ruogyR+lg648nywNWKUxW7l+mtMC9i4kdpfo4beQ/nqb4Uq2zMDs9zj4MbKVI391+kMnA==}
     peerDependencies:
       '@angular/common': ^13.0.0
@@ -1613,6 +1615,7 @@ packages:
       '@angular/core': 13.1.1_rxjs@7.5.1+zone.js@0.11.4
       '@angular/forms': 13.1.1_08b80eec157f3b321ee2225dd1a68122
       '@angular/localize': 13.1.1_8c9cbf9f52813daa0196579292d829a7
+      '@popperjs/core': 2.11.2
       rxjs: 7.5.1
       tslib: 2.3.1
     dev: false
@@ -1708,6 +1711,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@popperjs/core/2.11.2:
+    resolution: {integrity: sha512-92FRmppjjqz29VMJ2dn+xdyXZBrMlE42AV6Kq6BwjWV7CNUW1hs2FtxSNLQE+gJhaZ6AAmYuO9y8dshhcBl7vA==}
+    dev: false
 
   /@rollup/plugin-json/4.1.0_rollup@2.60.0:
     resolution: {integrity: sha512-yfLbTdNS6amI/2OpmbiBoW12vngr5NW2jCJVZSBEz+H5KfUJZ2M7sDjk0U6GOOdCWFVScShte29o9NezJ53TPw==}
@@ -2311,10 +2318,12 @@ packages:
     resolution: {integrity: sha1-aN/1++YMUes3cl6p4+0xDcwed24=}
     dev: true
 
-  /bootstrap/5.1.3:
+  /bootstrap/5.1.3_@popperjs+core@2.11.2:
     resolution: {integrity: sha512-fcQztozJ8jToQWXxVuEyXWW+dSo8AiXWKwiSSrKWsRB/Qt+Ewwza+JWoLKiTuQLaEPhdNAJ7+Dosc9DOIqNy7Q==}
     peerDependencies:
       '@popperjs/core': ^2.10.2
+    dependencies:
+      '@popperjs/core': 2.11.2
     dev: false
 
   /brace-expansion/1.1.11:
