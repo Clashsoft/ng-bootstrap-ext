@@ -12,6 +12,7 @@ Helpful additional components for [ng-bootstrap](https://ng-bootstrap.github.io)
 | ng-bootstrap-ext | Angular | ng-bootstrap |
 |------------------|---------|--------------|
 | 0.1.0            | ^12.2   | ^10          |
+| 0.2.0            | ^13     | ^12          |
 
 ## Usage
 
