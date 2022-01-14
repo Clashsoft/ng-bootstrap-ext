@@ -1,5 +1,7 @@
 # NgBootstrapExt
 
+[![NPM version](https://badge.fury.io/js/ng-bootstrap-ext.svg)](https://www.npmjs.com/package/ng-bootstrap-ext)
+
 Helpful additional components for [ng-bootstrap](https://ng-bootstrap.github.io).
 
 ## Installation
@@ -9,9 +11,11 @@ Helpful additional components for [ng-bootstrap](https://ng-bootstrap.github.io)
 
 ## Compatibility
 
-| ng-bootstrap-ext | Angular | ng-bootstrap |
-|------------------|---------|--------------|
-| 0.1.0            | ^12.2   | ^10          |
+| ng-bootstrap-ext | Angular | ng-bootstrap | bootstrap |
+|------------------|---------|--------------|-----------|
+| 0.1.0            | ^12.2   | ^10          | ^4        |
+| 0.2.0            | ^13     | ^11          | ^4        |
+| 0.3.0            | ^13     | ^12          | ^5        |
 
 ## Usage
 
@@ -31,7 +35,8 @@ this.toastService.add({
     {
       name: 'Click me',
       link: ['/home'], // optional, acts as routerLink
-      run: () => {}, // optional, do anything you want
+      run: () => {
+      }, // optional, do anything you want
     },
   ],
 });
