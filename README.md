@@ -9,10 +9,10 @@ Helpful additional components for [ng-bootstrap](https://ng-bootstrap.github.io)
 
 ## Compatibility
 
-| ng-bootstrap-ext | Angular | ng-bootstrap |
-|------------------|---------|--------------|
-| 0.1.0            | ^12.2   | ^10          |
-| 0.2.0            | ^13     | ^12          |
+| ng-bootstrap-ext | Angular | ng-bootstrap | bootstrap |
+|------------------|---------|--------------|-----------|
+| 0.1.0            | ^12.2   | ^10          | ^4        |
+| 0.2.0            | ^13     | ^12          | ^5        |
 
 ## Usage
 
