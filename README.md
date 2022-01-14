@@ -1,5 +1,7 @@
 # NgBootstrapExt
 
+[![NPM version](https://badge.fury.io/js/ng-bootstrap-ext.svg)](https://www.npmjs.com/package/ng-bootstrap-ext)
+
 Helpful additional components for [ng-bootstrap](https://ng-bootstrap.github.io).
 
 ## Installation
