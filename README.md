@@ -12,7 +12,8 @@ Helpful additional components for [ng-bootstrap](https://ng-bootstrap.github.io)
 | ng-bootstrap-ext | Angular | ng-bootstrap | bootstrap |
 |------------------|---------|--------------|-----------|
 | 0.1.0            | ^12.2   | ^10          | ^4        |
-| 0.2.0            | ^13     | ^12          | ^5        |
+| 0.2.0            | ^13     | ^11          | ^4        |
+| 0.3.0            | ^13     | ^12          | ^5        |
 
 ## Usage
 
@@ -32,7 +33,8 @@ this.toastService.add({
     {
       name: 'Click me',
       link: ['/home'], // optional, acts as routerLink
-      run: () => {}, // optional, do anything you want
+      run: () => {
+      }, // optional, do anything you want
     },
   ],
 });
