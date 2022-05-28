@@ -4,3 +4,4 @@
 
 export * from './lib/ng-bootstrap-ext.module';
 export * from './lib/toast';
+export * from './lib/modal';
