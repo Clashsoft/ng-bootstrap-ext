@@ -14,6 +14,9 @@ import {RouteTabsComponent} from './route-tabs.component';
     NgbNavModule,
     RouterModule,
   ],
+  exports: [
+    RouteTabsComponent,
+  ],
 })
 export class RouteTabsModule {
 }

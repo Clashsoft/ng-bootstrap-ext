@@ -12,6 +12,9 @@ import {ModalComponent} from './modal.component';
     CommonModule,
     NgbModalModule,
   ],
+  exports: [
+    ModalComponent,
+  ],
 })
 export class ModalModule {
 }
