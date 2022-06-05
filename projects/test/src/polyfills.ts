@@ -51,7 +51,3 @@ import 'zone.js';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
-
-import {ValidationTypes} from 'class-validator';
-// Waiting for https://github.com/typestack/class-validator/pull/748
-ValidationTypes.isValid = () => true;

@@ -9,4 +9,6 @@ import {Person} from './person';
 export class AppComponent {
   title = 'test';
   Person = Person;
+
+  person = new Person();
 }
