@@ -15,7 +15,10 @@ import {
   IS_STRING,
   IS_URL,
   MAX,
+  MAX_LENGTH,
   MIN,
+  MIN_LENGTH,
+  ValidationTypes,
 } from 'class-validator';
 import {ValidationMetadata} from 'class-validator/types/metadata/ValidationMetadata';
 import {InputProperties, InputType} from './input-properties.interface';
@@ -50,6 +53,8 @@ export class FormsService {
         type: 'text',
         required: true,
         pattern: null,
+        minLength: 0,
+        maxLength: 512 * 1024,
         max: null,
         min: null,
         step: null,
@@ -68,8 +73,17 @@ export class FormsService {
     }
 
     switch (m.type) {
+      case ValidationTypes.CONDITIONAL_VALIDATION:
+        props.required = false;
+        break;
       case IS_NOT_EMPTY:
-        props.required = true;
+        props.minLength ||= 1;
+        break;
+      case MIN_LENGTH:
+        props.minLength ||= m.constraints[0];
+        break;
+      case MAX_LENGTH:
+        props.maxLength ||= m.constraints[0];
         break;
       case MIN:
         props.min ||= m.constraints[0];

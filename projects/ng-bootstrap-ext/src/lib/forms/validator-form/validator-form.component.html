@@ -1,5 +1,8 @@
 <div *ngFor="let field of fields" class="mb-3">
-  <label for="{{field.id}}" class="form-label">{{field.label}}</label>
+  <label for="{{field.id}}" class="form-label">
+    {{field.label}}
+    <span *ngIf="field.required" class="text-danger" ngbTooltip="Required">*</span>
+  </label>
   <input
     class="form-control"
     [type]="field.type"
@@ -7,7 +10,9 @@
     [required]="field.required"
     [min]="field.min"
     [max]="field.max"
-    [pattern]="field.pattern"
     [step]="field.step"
+    [pattern]="field.pattern"
+    [minLength]="field.minLength"
+    [maxLength]="field.maxLength"
   >
 </div>

@@ -38,4 +38,6 @@ export interface InputProperties {
 
   // text
   pattern: string | RegExp | null;
+  minLength: number;
+  maxLength: number;
 }
