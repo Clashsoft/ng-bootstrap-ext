@@ -1,0 +1,13 @@
+<div *ngFor="let field of fields" class="mb-3">
+  <label for="{{field.id}}" class="form-label">{{field.label}}</label>
+  <input
+    class="form-control"
+    [type]="field.type"
+    [id]="field.id"
+    [required]="field.required"
+    [min]="field.min"
+    [max]="field.max"
+    [pattern]="field.pattern"
+    [step]="field.step"
+  >
+</div>
