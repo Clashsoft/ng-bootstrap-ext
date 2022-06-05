@@ -1,5 +1,5 @@
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input#input_types
-type InputType =
+export type InputType =
   // | 'button'
   | 'checkbox'
   | 'color'

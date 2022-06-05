@@ -2,16 +2,34 @@ import {Injectable} from '@angular/core';
 
 import {
   getMetadataStorage,
+  IS_BOOLEAN,
   IS_DIVISIBLE_BY,
-  IS_NEGATIVE, IS_NOT_EMPTY,
+  IS_EMAIL,
+  IS_HEX_COLOR,
+  IS_MOBILE_PHONE,
+  IS_NEGATIVE,
+  IS_NOT_EMPTY,
   IS_NUMBER,
+  IS_PHONE_NUMBER,
   IS_POSITIVE,
   IS_STRING,
+  IS_URL,
   MAX,
   MIN,
 } from 'class-validator';
 import {ValidationMetadata} from 'class-validator/types/metadata/ValidationMetadata';
-import {InputProperties} from './input-properties.interface';
+import {InputProperties, InputType} from './input-properties.interface';
+
+const TYPE_MAPPING: Record<string, InputType> = {
+  [IS_BOOLEAN]: 'checkbox',
+  [IS_STRING]: 'text',
+  [IS_NUMBER]: 'number',
+  [IS_HEX_COLOR]: 'color',
+  [IS_EMAIL]: 'email',
+  [IS_URL]: 'url',
+  [IS_PHONE_NUMBER]: 'tel',
+  [IS_MOBILE_PHONE]: 'tel',
+};
 
 @Injectable({
   providedIn: 'root',
@@ -44,15 +62,14 @@ export class FormsService {
   }
 
   private translateMetadata(m: ValidationMetadata, props: InputProperties) {
+    if (m.type in TYPE_MAPPING) {
+      props.type = TYPE_MAPPING[m.type];
+      return;
+    }
+
     switch (m.type) {
-      case IS_STRING:
-        props.type = 'text';
-        break;
       case IS_NOT_EMPTY:
         props.required = true;
-        break;
-      case IS_NUMBER:
-        props.type = 'number';
         break;
       case MIN:
         props.min ||= m.constraints[0];
