@@ -1,6 +1,6 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule as NgFormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbTooltipModule} from '@ng-bootstrap/ng-bootstrap';
 import {ValidatorFormComponent} from './validator-form/validator-form.component';
 
@@ -13,6 +13,7 @@ import {ValidatorFormComponent} from './validator-form/validator-form.component'
     CommonModule,
     NgbTooltipModule,
     ReactiveFormsModule,
+    NgFormsModule,
   ],
   exports: [
     ValidatorFormComponent,

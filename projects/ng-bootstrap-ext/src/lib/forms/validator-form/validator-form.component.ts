@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {validate} from 'class-validator';
 import {FormsService} from '../forms.service';
 import {InputProperties} from '../input-properties.interface';
 
@@ -8,9 +9,12 @@ import {InputProperties} from '../input-properties.interface';
   styleUrls: ['./validator-form.component.css'],
 })
 export class ValidatorFormComponent implements OnInit {
-  @Input() target!: Function;
+  @Input() target?: Function;
+  @Input() object: any;
 
   fields: InputProperties[] = [];
+
+  errors: Record<string, string[]> = {};
 
   constructor(
     private formsService: FormsService,
@@ -18,7 +22,13 @@ export class ValidatorFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.fields = this.formsService.parse(this.target);
+    this.fields = this.formsService.parse(this.target || this.object.constructor);
   }
 
+  change(property: string): void {
+    validate(this.object).then(errors => {
+      let error = errors.find(e => e.property === property);
+      this.errors[property] = Object.values(error?.constraints || {});
+    });
+  }
 }

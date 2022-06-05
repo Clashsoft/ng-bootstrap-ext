@@ -14,5 +14,12 @@
     [pattern]="field.pattern"
     [minLength]="field.minLength"
     [maxLength]="field.maxLength"
+    [(ngModel)]="object[field.id]"
+    (change)="change(field.id)"
+    [class.is-valid]="errors[field.id]?.length === 0"
+    [class.is-invalid]="errors[field.id]?.length"
   >
+  <div class="invalid-feedback">
+    {{ errors[field.id] }}
+  </div>
 </div>
