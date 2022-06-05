@@ -37,7 +37,7 @@ export interface InputProperties {
   step: number | null;
 
   // text
-  pattern: string | RegExp | null;
+  pattern: string | RegExp;
   minLength: number;
   maxLength: number;
 }

@@ -52,7 +52,7 @@ export class FormsService {
         label: key,
         type: 'text',
         required: true,
-        pattern: null,
+        pattern: '',
         minLength: 0,
         maxLength: 512 * 1024,
         max: null,
