@@ -29,7 +29,12 @@ export class FormsService {
       const props: InputProperties = {
         id: key,
         label: key,
-        type: 'string',
+        type: 'text',
+        required: true,
+        pattern: null,
+        max: null,
+        min: null,
+        step: null,
       };
       for (let m of metadata) {
         this.translateMetadata(m, props);
@@ -41,7 +46,7 @@ export class FormsService {
   private translateMetadata(m: ValidationMetadata, props: InputProperties) {
     switch (m.type) {
       case IS_STRING:
-        props.type = 'string';
+        props.type = 'text';
         break;
       case IS_NOT_EMPTY:
         props.required = true;
@@ -56,10 +61,10 @@ export class FormsService {
         props.max ||= m.constraints[0];
         break;
       case IS_POSITIVE:
-        props.min ||= '0';
+        props.min ||= 0;
         break;
       case IS_NEGATIVE:
-        props.max ||= '0';
+        props.max ||= 0;
         break;
       case IS_DIVISIBLE_BY:
         props.step ||= m.constraints[0];
