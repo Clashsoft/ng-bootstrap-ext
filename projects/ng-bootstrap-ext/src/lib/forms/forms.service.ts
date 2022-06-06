@@ -67,12 +67,12 @@ export class FormsService {
   }
 
   private translateMetadata(m: ValidationMetadata, props: InputProperties) {
-    if (m.type in TYPE_MAPPING) {
-      props.type = TYPE_MAPPING[m.type];
+    if (m.name in TYPE_MAPPING) {
+      props.type = TYPE_MAPPING[m.name];
       return;
     }
 
-    switch (m.type) {
+    switch (m.name) {
       case ValidationTypes.CONDITIONAL_VALIDATION:
         props.required = false;
         break;
