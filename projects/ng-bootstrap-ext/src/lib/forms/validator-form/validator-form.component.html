@@ -29,6 +29,7 @@
       [pattern]="field.pattern"
       [minLength]="field.minLength"
       [maxLength]="field.maxLength"
+      [rows]="field.rows"
       [(ngModel)]="object[field.id]"
       (change)="validate(field)"
     ></textarea>

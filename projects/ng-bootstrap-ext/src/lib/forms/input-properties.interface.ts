@@ -35,6 +35,7 @@ export interface InputProperties {
   required: boolean;
 
   options?: any[];
+  rows?: number;
 
   // number
   min: number | null;
@@ -52,6 +53,7 @@ export type CustomProperties = Partial<Pick<InputProperties,
   | 'control'
   | 'placeholder'
   | 'description'
+  | 'rows'
   //
 >>;
 
