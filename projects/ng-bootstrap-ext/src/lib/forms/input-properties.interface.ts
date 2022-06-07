@@ -27,6 +27,8 @@ export type InputType =
 export interface InputProperties {
   id: string;
   label: string;
+  placeholder?: string;
+  description?: string;
 
   control: 'input' | 'radio' | 'select' | 'textarea';
   type: InputType;
@@ -44,5 +46,13 @@ export interface InputProperties {
   minLength: number;
   maxLength: number;
 }
+
+export type CustomProperties = Partial<Pick<InputProperties,
+  | 'label'
+  | 'control'
+  | 'placeholder'
+  | 'description'
+  //
+>>;
 
 export type Mapper = (props: InputProperties, ...constraints: any[]) => void;

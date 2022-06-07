@@ -3,7 +3,8 @@ import {Injectable} from '@angular/core';
 import {getMetadataStorage} from 'class-validator';
 import {ValidationMetadata} from 'class-validator/types/metadata/ValidationMetadata';
 import {MAPPERS, TYPE_MAPPING} from './forms.constants';
-import {InputProperties, InputType} from './input-properties.interface';
+import {CustomProperties, InputProperties, InputType} from './input-properties.interface';
+import {getPresentation} from './presentation.decorator';
 
 
 @Injectable({
@@ -19,10 +20,12 @@ export class FormsService {
     let metadata = storage.getTargetValidationMetadatas(ctor, ctor.name, false, false);
     let grouped = storage.groupByPropertyName(metadata);
     return Object.entries(grouped).map(([key, metadata]) => {
+      const customProps = getPresentation(ctor.prototype, key);
       const props: InputProperties = {
-        id: key,
         label: key,
         control: 'input',
+        ...customProps,
+        id: key,
         type: 'text',
         required: true,
         pattern: '',

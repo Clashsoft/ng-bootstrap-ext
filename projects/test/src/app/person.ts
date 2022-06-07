@@ -13,6 +13,7 @@ import {
   MaxLength,
   Min,
 } from 'class-validator';
+import {Presentation} from '../../../ng-bootstrap-ext/src/lib/forms/presentation.decorator';
 
 export enum Gender {
   MALE = 'm',
@@ -35,6 +36,13 @@ export class Person {
   @IsOptional()
   @IsUrl()
   website?: string;
+
+  @Presentation({
+    control: 'textarea',
+    description: 'Write something about yourself',
+  })
+  @IsString()
+  bio?: string;
 
   @IsNumber()
   @Min(0)
