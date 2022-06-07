@@ -15,7 +15,7 @@
     [minLength]="field.minLength"
     [maxLength]="field.maxLength"
     [(ngModel)]="object[field.id]"
-    (change)="change(field.id)"
+    (change)="validate(field)"
     [class.is-valid]="errors[field.id]?.length === 0"
     [class.is-invalid]="errors[field.id]?.length"
   >

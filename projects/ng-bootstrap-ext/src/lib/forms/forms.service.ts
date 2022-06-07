@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 import {getMetadataStorage} from 'class-validator';
 import {ValidationMetadata} from 'class-validator/types/metadata/ValidationMetadata';
 import {MAPPERS, TYPE_MAPPING} from './forms.constants';
-import {InputProperties} from './input-properties.interface';
+import {InputProperties, InputType} from './input-properties.interface';
 
 
 @Injectable({
@@ -45,6 +45,17 @@ export class FormsService {
 
     if (m.name in MAPPERS) {
       MAPPERS[m.name](props, ...(m.constraints ?? []));
+    }
+  }
+
+  coerce(type: InputType, value: any) {
+    switch (type) {
+      case 'checkbox':
+        return value === 'true';
+      case 'number':
+        return +value;
+      default:
+        return value;
     }
   }
 }

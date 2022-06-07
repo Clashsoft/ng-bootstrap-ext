@@ -25,7 +25,10 @@ export class ValidatorFormComponent implements OnInit {
     this.fields = this.formsService.parse(this.target || this.object.constructor);
   }
 
-  change(property: string): void {
+  validate(field: InputProperties): void {
+    let property = field.id;
+    this.object[property] = this.formsService.coerce(field.type, this.object[property]);
+
     validate(this.object).then(errors => {
       let error = errors.find(e => e.property === property);
       this.errors[property] = Object.values(error?.constraints || {});
