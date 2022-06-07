@@ -45,10 +45,6 @@ function getEnumValues(enumClass: any): any[] {
 }
 
 export const COMMON_MAPPERS: Record<string, Mapper> = {
-  [ValidationTypes.CONDITIONAL_VALIDATION]: (props) => props.required = false, // aka IsOptional
-  [IS_DEFINED]: (props) => props.required = true,
-  [IS_EMPTY]: (props) => props.pattern = '^$',
-  [IS_NOT_EMPTY]: (props) => props.minLength = 1,
   [IS_IN]: (props, options) => {
     props.options = options;
     props.control = options.length > (props.rows || 4) ? 'select' : 'radio';
@@ -72,7 +68,8 @@ export const NUMBER_MAPPERS: Record<string, Mapper> = {
 };
 
 export const STRING_MAPPERS: Record<string, Mapper> = {
-  [IS_NOT_EMPTY]: (props) => props.required = true,
+  [IS_EMPTY]: (props) => props.maxLength = 0,
+  [IS_NOT_EMPTY]: (props) => props.minLength = 1,
   [MIN_LENGTH]: (props, minLength) => props.minLength = minLength,
   [MAX_LENGTH]: (props, maxLength) => props.maxLength = maxLength,
 };

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 
-import {getMetadataStorage} from 'class-validator';
+import {getMetadataStorage, ValidationTypes} from 'class-validator';
 import {ValidationMetadata} from 'class-validator/types/metadata/ValidationMetadata';
 import {MAPPERS, TYPE_MAPPING} from './forms.constants';
 import {CustomProperties, InputProperties, InputType} from './input-properties.interface';
@@ -49,6 +49,11 @@ export class FormsService {
 
     if (m.name in MAPPERS) {
       MAPPERS[m.name](props, ...(m.constraints ?? []));
+    }
+
+    if (m.type === ValidationTypes.CONDITIONAL_VALIDATION) {
+      // TODO check for IsOptional
+      props.required = false;
     }
   }
 
