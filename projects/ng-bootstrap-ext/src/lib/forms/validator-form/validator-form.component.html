@@ -3,40 +3,51 @@
     {{field.label}}
     <span *ngIf="field.required" class="text-danger" ngbTooltip="Required">*</span>
   </label>
-  <ng-container *ngIf="field.options && field.options.length <= 4">
-    <div *ngFor="let option of field.options; let i = index" class="form-check">
-      <input class="form-check-input" type="radio" id="radio-{{ i }}"
-             [checked]="object[field.id] === option"
-             (change)="object[field.id] = option">
-      <label class="form-check-label" for="radio-{{ i }}">
-        {{ option }}
-      </label>
-    </div>
-  </ng-container>
-  <ng-container *ngIf="field.options && field.options.length > 4">
-    <select class="form-select" [(ngModel)]="object[field.id]">
+  <ng-container [ngSwitch]="field.control">
+    <input
+      *ngSwitchCase="'input'"
+      class="form-control"
+      [type]="field.type"
+      [id]="field.id"
+      [required]="field.required"
+      [min]="field.min"
+      [max]="field.max"
+      [step]="field.step"
+      [pattern]="field.pattern"
+      [minLength]="field.minLength"
+      [maxLength]="field.maxLength"
+      [(ngModel)]="object[field.id]"
+      (change)="validate(field)"
+      [class.is-valid]="errors[field.id]?.length === 0"
+      [class.is-invalid]="errors[field.id]?.length"
+    >
+    <textarea
+      *ngSwitchCase="'textarea'"
+      class="form-control"
+      [id]="field.id"
+      [required]="field.required"
+      [pattern]="field.pattern"
+      [minLength]="field.minLength"
+      [maxLength]="field.maxLength"
+      [(ngModel)]="object[field.id]"
+      (change)="validate(field)"
+    ></textarea>
+    <select *ngSwitchCase="'select'" class="form-select" [(ngModel)]="object[field.id]">
       <option *ngFor="let option of field.options" [value]="option">
         {{ option }}
       </option>
     </select>
+    <ng-container *ngSwitchCase="'radio'">
+      <div *ngFor="let option of field.options; let i = index" class="form-check">
+        <input class="form-check-input" type="radio" id="radio-{{ i }}"
+               [checked]="object[field.id] === option"
+               (change)="object[field.id] = option">
+        <label class="form-check-label" for="radio-{{ i }}">
+          {{ option }}
+        </label>
+      </div>
+    </ng-container>
   </ng-container>
-  <input
-    *ngIf="!field.options"
-    class="form-control"
-    [type]="field.type"
-    [id]="field.id"
-    [required]="field.required"
-    [min]="field.min"
-    [max]="field.max"
-    [step]="field.step"
-    [pattern]="field.pattern"
-    [minLength]="field.minLength"
-    [maxLength]="field.maxLength"
-    [(ngModel)]="object[field.id]"
-    (change)="validate(field)"
-    [class.is-valid]="errors[field.id]?.length === 0"
-    [class.is-invalid]="errors[field.id]?.length"
-  >
   <div class="invalid-feedback">
     {{ errors[field.id] }}
   </div>

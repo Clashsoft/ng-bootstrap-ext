@@ -49,8 +49,14 @@ export const COMMON_MAPPERS: Record<string, Mapper> = {
   [IS_DEFINED]: (props) => props.required = true,
   [IS_EMPTY]: (props) => props.pattern = '^$',
   [IS_NOT_EMPTY]: (props) => props.minLength = 1,
-  [IS_IN]: (props, options) => props.options = options,
-  [IS_ENUM]: (props, enumObj) => props.options = getEnumValues(enumObj),
+  [IS_IN]: (props, options) => {
+    props.options = options;
+    props.control = options.length > 4 ? 'select' : 'radio';
+  },
+  [IS_ENUM]: (props, enumObj) => {
+    props.options = getEnumValues(enumObj);
+    props.control = props.options.length > 4 ? 'select' : 'radio';
+  },
 };
 
 export const NUMBER_MAPPERS: Record<string, Mapper> = {

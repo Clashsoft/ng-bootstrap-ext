@@ -28,6 +28,7 @@ export interface InputProperties {
   id: string;
   label: string;
 
+  control: 'input' | 'radio' | 'select' | 'textarea';
   type: InputType;
   required: boolean;
 
