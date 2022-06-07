@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, QueryList, ViewChildren} from '@angular/core';
+import {ValidatorFormComponent} from 'ng-bootstrap-ext';
 import {Person} from './person';
 
 @Component({
@@ -11,4 +12,13 @@ export class AppComponent {
   Person = Person;
 
   person = new Person();
+
+  @ViewChildren(ValidatorFormComponent)
+  forms!: QueryList<ValidatorFormComponent>;
+
+  validate() {
+    for (let form of this.forms) {
+      form.validateAll();
+    }
+  }
 }
