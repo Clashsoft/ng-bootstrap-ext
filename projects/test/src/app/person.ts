@@ -3,6 +3,7 @@ import {
   IsEmail,
   IsEnum,
   IsIn,
+  IsInt,
   IsNotEmpty,
   IsNumber,
   IsOptional,
@@ -44,7 +45,7 @@ export class Person {
   @IsString()
   bio?: string;
 
-  @IsNumber()
+  @IsInt()
   @Min(0)
   @Max(100)
   age!: number;
