@@ -32,6 +32,8 @@
       [rows]="field.rows"
       [(ngModel)]="object[field.id]"
       (change)="validate(field)"
+      [class.is-valid]="errors[field.id]?.length === 0"
+      [class.is-invalid]="errors[field.id]?.length"
     ></textarea>
     <select *ngSwitchCase="'select'" class="form-select" [(ngModel)]="object[field.id]">
       <option *ngFor="let option of field.options" [value]="option">
