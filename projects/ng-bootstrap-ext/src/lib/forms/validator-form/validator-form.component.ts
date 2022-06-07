@@ -11,6 +11,7 @@ import {InputProperties} from '../input-properties.interface';
 export class ValidatorFormComponent implements OnInit {
   @Input() target?: Function;
   @Input() object: any;
+  @Input() pick?: string[];
 
   fields: InputProperties[] = [];
 
@@ -22,7 +23,7 @@ export class ValidatorFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.fields = this.formsService.parse(this.target || this.object.constructor);
+    this.fields = this.formsService.parse(this.target || this.object.constructor, this.pick);
   }
 
   validate(field: InputProperties): void {

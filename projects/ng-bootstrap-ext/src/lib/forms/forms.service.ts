@@ -15,11 +15,16 @@ export class FormsService {
   constructor() {
   }
 
-  parse(ctor: Function): InputProperties[] {
+  parse<T extends object>(ctor: Function, properties?: (keyof T)[]): InputProperties[] {
     let storage = getMetadataStorage();
     let metadata = storage.getTargetValidationMetadatas(ctor, ctor.name, false, false);
     let grouped = storage.groupByPropertyName(metadata);
-    return Object.entries(grouped).map(([key, metadata]) => {
+    let entries = Object.entries(grouped);
+    if (properties) {
+      const propertySet = new Set(properties);
+      entries = entries.filter(([key]) => propertySet.has(key as keyof T));
+    }
+    return entries.map(([key, metadata]) => {
       const customProps = getPresentation(ctor.prototype, key);
       const props: InputProperties = {
         label: key,
