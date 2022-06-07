@@ -1,6 +1,8 @@
 import {
   IsDivisibleBy,
   IsEmail,
+  IsEnum,
+  IsIn,
   IsNotEmpty,
   IsNumber,
   IsOptional,
@@ -11,6 +13,12 @@ import {
   MaxLength,
   Min,
 } from 'class-validator';
+
+export enum Gender {
+  MALE = 'm',
+  FEMALE = 'f',
+  DIVERSE = 'd',
+}
 
 export class Person {
   @IsString()
@@ -32,6 +40,12 @@ export class Person {
   @Min(0)
   @Max(100)
   age!: number;
+
+  @IsEnum(Gender)
+  gender!: Gender;
+
+  @IsIn(['online', 'sleeping', 'do-not-disturb', 'invisible', 'offline'])
+  status!: string;
 
   @IsNumber()
   @IsDivisibleBy(0.01)

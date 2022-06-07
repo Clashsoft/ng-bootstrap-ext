@@ -31,6 +31,8 @@ export interface InputProperties {
   type: InputType;
   required: boolean;
 
+  options?: any[];
+
   // number
   min: number | null;
   max: number | null;

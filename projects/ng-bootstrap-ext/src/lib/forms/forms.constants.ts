@@ -4,7 +4,9 @@ import {
   IS_DIVISIBLE_BY,
   IS_EMAIL,
   IS_EMPTY,
+  IS_ENUM,
   IS_HEX_COLOR,
+  IS_IN,
   IS_INT,
   IS_MOBILE_PHONE,
   IS_NEGATIVE,
@@ -38,11 +40,17 @@ export const TYPE_MAPPING: Record<string, InputType> = {
   //  [IS_ISO8601]: 'datetime-local', // ok
 };
 
+function getEnumValues(enumClass: any): any[] {
+  return Object.entries(enumClass).filter(entry => isNaN(parseInt(entry[0]))).map(entry => entry[1]);
+}
+
 export const COMMON_MAPPERS: Record<string, Mapper> = {
   [ValidationTypes.CONDITIONAL_VALIDATION]: (props) => props.required = false, // aka IsOptional
   [IS_DEFINED]: (props) => props.required = true,
   [IS_EMPTY]: (props) => props.pattern = '^$',
   [IS_NOT_EMPTY]: (props) => props.minLength = 1,
+  [IS_IN]: (props, options) => props.options = options,
+  [IS_ENUM]: (props, enumObj) => props.options = getEnumValues(enumObj),
 };
 
 export const NUMBER_MAPPERS: Record<string, Mapper> = {
