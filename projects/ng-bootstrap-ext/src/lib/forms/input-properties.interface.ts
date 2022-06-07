@@ -41,3 +41,5 @@ export interface InputProperties {
   minLength: number;
   maxLength: number;
 }
+
+export type Mapper = (props: InputProperties, ...constraints: any[]) => void;
