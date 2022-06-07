@@ -31,6 +31,11 @@ export const TYPE_MAPPING: Record<string, InputType> = {
   [IS_URL]: 'url',
   [IS_PHONE_NUMBER]: 'tel',
   [IS_MOBILE_PHONE]: 'tel',
+  // TODO Dates.
+  //  [IS_DATE]: 'date', // really unsure. IsDate only implies Date instance but not whether day with or without time
+  //  [IS_MILITARY_TIME]: 'time', // questionably useful
+  //  [IS_DATE_STRING]: 'datetime-local', // ok
+  //  [IS_ISO8601]: 'datetime-local', // ok
 };
 
 export const COMMON_MAPPERS: Record<string, Mapper> = {
