@@ -1,7 +1,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input#input_types
 export type InputType =
   // | 'button'
-  | 'checkbox'
+  // | 'checkbox'
   | 'color'
   | 'date'
   | 'datetime-local'
@@ -30,7 +30,7 @@ export interface InputProperties {
   placeholder?: string;
   description?: string;
 
-  control: 'input' | 'radio' | 'select' | 'textarea';
+  control: 'input' | 'checkbox' | 'radio' | 'select' | 'textarea';
   type: InputType;
   required: boolean;
 

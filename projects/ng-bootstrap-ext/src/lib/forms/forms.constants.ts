@@ -25,7 +25,6 @@ import {
 import {InputType, Mapper} from './input-properties.interface';
 
 export const TYPE_MAPPING: Record<string, InputType> = {
-  [IS_BOOLEAN]: 'checkbox',
   [IS_STRING]: 'text',
   [IS_NUMBER]: 'number',
   [IS_HEX_COLOR]: 'color',
@@ -45,6 +44,10 @@ function getEnumValues(enumClass: any): any[] {
 }
 
 export const COMMON_MAPPERS: Record<string, Mapper> = {
+  [IS_BOOLEAN]: (props) => {
+    props.control = 'checkbox';
+    props.options ||= [true, false];
+  },
   [IS_IN]: (props, options) => {
     props.options = options;
     props.control = options.length > (props.rows || 4) ? 'select' : 'radio';

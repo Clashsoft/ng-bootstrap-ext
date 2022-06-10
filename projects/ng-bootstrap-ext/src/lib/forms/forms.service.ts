@@ -64,8 +64,6 @@ export class FormsService {
 
   coerce(type: InputType, value: any) {
     switch (type) {
-      case 'checkbox':
-        return value === 'true';
       case 'number':
         return +value;
       default:

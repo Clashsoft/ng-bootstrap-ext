@@ -1,5 +1,5 @@
-<div *ngFor="let field of fields" class="mb-3">
-  <label for="{{field.id}}" class="form-label">
+<div *ngFor="let field of fields" class="mb-3" [class.form-check]="field.control === 'checkbox'">
+  <label *ngIf="field.control !== 'checkbox'" for="{{field.id}}" class="form-label">
     {{field.label}}
     <span *ngIf="field.required" class="text-danger" ngbTooltip="Required">*</span>
   </label>
@@ -21,6 +21,16 @@
       [class.is-valid]="errors[field.id]?.length === 0"
       [class.is-invalid]="errors[field.id]?.length"
     >
+    <input *ngSwitchCase="'checkbox'"
+      class="form-check-input"
+      type="checkbox"
+      [id]="field.id"
+      [required]="field.required"
+      [(ngModel)]="object[field.id]"
+      (change)="validate(field)"
+      [class.is-valid]="errors[field.id]?.length === 0"
+      [class.is-invalid]="errors[field.id]?.length"
+    />
     <textarea
       *ngSwitchCase="'textarea'"
       class="form-control"
@@ -51,6 +61,9 @@
       </div>
     </ng-container>
   </ng-container>
+  <label *ngIf="field.control == 'checkbox'" class="form-check-label" for="{{field.id}}">
+    {{ field.placeholder || field.label }}
+  </label>
   <div class="form-text">
     {{ field.description }}
   </div>

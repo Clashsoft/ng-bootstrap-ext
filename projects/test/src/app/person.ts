@@ -1,4 +1,6 @@
 import {
+  Equals,
+  IsBoolean,
   IsDivisibleBy,
   IsEmail,
   IsEnum,
@@ -59,4 +61,17 @@ export class Person {
   @IsNumber()
   @IsDivisibleBy(0.01)
   balance!: number;
+
+  @Presentation({
+    placeholder: 'I want to receive emails about new products',
+  })
+  @IsBoolean()
+  adEmailConsent!: boolean;
+
+  @Presentation({
+    placeholder: 'I have read and agree to the terms and conditions',
+  })
+  @IsBoolean()
+  @Equals(true)
+  tosAccepted!: true;
 }
