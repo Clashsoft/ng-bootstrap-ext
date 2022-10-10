@@ -53,7 +53,7 @@ this.toastService.error('Account', 'Failed to delete account', error);
 
   ```angular2html
   <ngbx-modal #modal="modal" [back]="['../..']">
-    <ng-container modal-header>
+    <ng-container modal-title>
       Edit User
     </ng-container>
     <ng-container modal-body>
