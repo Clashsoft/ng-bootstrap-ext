@@ -52,8 +52,8 @@ this.toastService.error('Account', 'Failed to delete account', error);
 2. Create a component, e.g. `EditUserComponent`:
 
   ```angular2html
-  <app-modal #modal="modal" [back]="['../..']">
-    <ng-container modal-header>
+  <ngbx-modal #modal="modal" [back]="['../..']">
+    <ng-container modal-title>
       Edit User
     </ng-container>
     <ng-container modal-body>
@@ -67,7 +67,7 @@ this.toastService.error('Account', 'Failed to delete account', error);
         Save
       </button>
     </ng-container>
-  </app-modal>
+  </ngbx-modal>
   ```
 
 3. Add `<router-outlet></router-outlet>` to the end of the parent component (e.g. `UserListComponent`).
