@@ -1,6 +1,6 @@
 {
   "name": "ng-bootstrap-ext",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "keywords": [
     "ng-bootstrap",
     "bootstrap",
@@ -8,9 +8,9 @@
     "components"
   ],
   "peerDependencies": {
-    "@angular/common": "^13.0.0",
-    "@angular/core": "^13.0.0",
-    "@ng-bootstrap/ng-bootstrap": "^12.0.0",
+    "@angular/common": "^14.1.0",
+    "@angular/core": "^14.1.0",
+    "@ng-bootstrap/ng-bootstrap": "^13.0.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2"
   },
