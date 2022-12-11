@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 import {getMetadataStorage, ValidationTypes} from 'class-validator';
 import {ValidationMetadata} from 'class-validator/types/metadata/ValidationMetadata';
 import {MAPPERS, TYPE_MAPPING} from './forms.constants';
-import {CustomProperties, InputProperties, InputType} from './input-properties.interface';
+import {InputProperties, InputType} from './input-properties.interface';
 import {getPresentation} from './presentation.decorator';
 
 
@@ -48,6 +48,10 @@ export class FormsService {
   }
 
   private translateMetadata(m: ValidationMetadata, props: InputProperties) {
+    if (!m.name) {
+      return;
+    }
+
     if (m.name in TYPE_MAPPING) {
       props.type = TYPE_MAPPING[m.name];
     }
