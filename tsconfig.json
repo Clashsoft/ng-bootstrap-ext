@@ -11,6 +11,7 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "useDefineForClassFields": false,
     "paths": {
       "ng-bootstrap-ext": [
         "dist/ng-bootstrap-ext/ng-bootstrap-ext",
@@ -20,7 +21,7 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2017",
+    "target": "ES2022",
     "module": "es2020",
     "lib": [
       "es2018",
