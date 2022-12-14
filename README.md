@@ -18,6 +18,7 @@ Helpful additional components for [ng-bootstrap](https://ng-bootstrap.github.io)
 | 0.3              | ^13     | ^12          | ^5.0      |
 | 0.4              | ^13     | ^12          | ^5.0      |
 | 0.5              | ^14.1   | ^13          | ^5.2      |
+| 0.6              | ^15.0   | ^14          | ^5.2.3    |
 
 ## Usage
 
