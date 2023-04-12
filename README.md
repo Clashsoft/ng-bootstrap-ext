@@ -1,4 +1,4 @@
-# NgBootstrapExt
+# NgBootstrapExt - moved to [ngbx](https://github.com/Clashsoft/meanstream/tree/master/libs/ngbx#readme)
 
 [![NPM version](https://badge.fury.io/js/ng-bootstrap-ext.svg)](https://www.npmjs.com/package/ng-bootstrap-ext)
 
@@ -19,6 +19,8 @@ Helpful additional components for [ng-bootstrap](https://ng-bootstrap.github.io)
 | 0.4              | ^13     | ^12          | ^5.0      |
 | 0.5              | ^14.1   | ^13          | ^5.2      |
 | 0.6              | ^15.0   | ^14          | ^5.2.3    |
+
+For newer versions, see [ngbx](https://github.com/Clashsoft/meanstream/tree/master/libs/ngbx#compatibility).
 
 ## Usage
 
